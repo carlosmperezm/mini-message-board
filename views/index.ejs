@@ -1,0 +1,8 @@
+<html>
+    <h1>Messages</h1>
+    <ul>
+        <% messages.forEach(message=>{ %>
+            <li> User <%= message.user %> said: <%= message.text %> on (<%= message.added %>) </li>
+        <% }) %>
+    </ul>
+</html>
