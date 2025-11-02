@@ -2,7 +2,8 @@
     <h1>Messages</h1>
     <ul>
         <% messages.forEach(message=>{ %>
-            <li> User <%= message.user %> said: <%= message.text %> on (<%= message.added %>) </li>
+            <li> User <%= message.user %>: <%= message.text %> on (<%= message.added %>) </li> 
+            <a href="<%=`/details/${message.user}/${message.text}/${message.added}`%>" >Open</a>
         <% }) %>
     </ul>
-</html>
+<!-- </html> -->
