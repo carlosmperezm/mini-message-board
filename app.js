@@ -3,6 +3,7 @@ import 'dotenv/config';
 import path from 'node:path';
 import appRouter from './routes/index.js';
 import messageRouter from './routes/messageRouter.js';
+import pool from './db/pool.js';
 
 const PORT = process.env.PORT || 3000;
 const app = express();

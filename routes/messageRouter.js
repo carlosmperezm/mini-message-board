@@ -1,17 +1,9 @@
 import { Router } from 'express';
-import { messages } from './index.js';
+import { createMessage, getMessageForm } from '../controllers/messageController.js';
 
 const messageRouter = Router();
 
-messageRouter.get('', (req, res) => res.render('messageForm'));
-messageRouter.post('', (req, res) => {
-    const newMessage = {
-        text: req.body.message,
-        user: req.body.username,
-        added: new Date(),
-    };
-    messages.push(newMessage);
-    res.redirect('/');
-});
+messageRouter.get('', getMessageForm);
+messageRouter.post('', createMessage);
 
 export default messageRouter;
