@@ -12,3 +12,6 @@ export async function getUsers(usernameSubstring) {
     const result = await pool.query("SELECT * FROM messages WHERE username LIKE $1", [`%${usernameSubstring}%`]);
     return result.rows;
 }
+export async function saveMessage(messageData) {
+    await pool.query("INSERT INTO messages (username,message) VALUES ($1,$2)", [messageData.username, messageData.message]);
+}
