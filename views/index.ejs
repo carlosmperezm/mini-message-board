@@ -1,7 +1,8 @@
 <html>
     <h1>Messages</h1>
+    <%- include("partials/errors.ejs") %>
     <ul>
-        <% messages.forEach(message=>{ %>
+        <% locals.messages.forEach(message=>{ %>
             <li> User <%= message.username %>: <%= message.message %> on (<%= message.date %>) </li> 
             <a href="<%=`/details/${message.username}/${message.message}/${message.date}`%>" >Open</a>
         <% }) %>
