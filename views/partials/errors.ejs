@@ -1,6 +1,6 @@
-<% if (errors) { %>
+<% if (locals.errors) { %>
     <ul>
-        <% errors.forEach((error) => { %>
+        <% locals.errors.forEach((error) => { %>
             <l1>Error: <%=error.msg%>  </l1>
         <% }); %>
     </ul>
